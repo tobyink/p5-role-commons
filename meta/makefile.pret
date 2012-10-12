@@ -1,0 +1,14 @@
+# This file provides instructions for packaging.
+
+`Role-Commons`
+	perl_version_from m`Role::Commons`;
+	version_from      m`Role::Commons`;
+	readme_from       m`Role::Commons`;
+	test_requires     p`Test::More 0.61` ;
+	requires          p`Scalar::Does 0.006` ;
+	requires          p`Moo::Role 1.000000` ;
+	requires          p`Object::ID` ;
+	requires          p`Class::Load` ;
+	requires          p`Data::OptList` ;
+	.
+
