@@ -31,23 +31,23 @@ $_smart_match = sub
 {
 	my ($A, $B) = @_;
 	
-	if (not defined $b)
-		{ return not defined $a }
+	if (not defined $B)
+		{ return not defined $A }
 	
-	if (does $b, CODE)
-		{ return $b->($a) }
+	if (does $B, CODE)
+		{ return $B->($A) }
 	
-	if (does $b, ARRAY)
-		{ return scalar grep { $_smart_match->($a, $_) } @$b }
+	if (does $B, ARRAY)
+		{ return scalar grep { $_smart_match->($A, $_) } @$B }
 	
-	if (does $b, HASH)
-		{ return defined $a && exists $b->{$a} }
+	if (does $B, HASH)
+		{ return defined $A && exists $B->{$A} }
 	
-	if (does $b, REGEXP)
-		{ return $a =~ $b }
+	if (does $B, REGEXP)
+		{ return $A =~ $B }
 	
-	if (does $b, STRING)
-		{ return $a eq $b }
+	if (does $B, STRING)
+		{ return $A eq $B }
 	
 	return;
 };
