@@ -7,7 +7,6 @@ use Carp qw[ carp croak ];
 use Class::Load qw[ load_class ];
 use Moo::Role qw[];
 use Scalar::Does qw[ does ARRAY HASH ];
-use Data::OptList qw[ mkopt ];
 
 BEGIN {
 	$Role::Commons::AUTHORITY = 'cpan:TOBYINK';
@@ -31,9 +30,12 @@ sub parse_arguments
 	
 	my %roles;
 	my %options;
-	for my $opt (@{ mkopt \@args })
+	while (my $name = shift @args)
 	{
-		my ($name, $details) = @$opt;
+		my $details;
+		if ($name =~ /^-/ or ref $args[0])
+			{ $details = shift @args }
+		
 		if ($name =~ /^\-(.+)$/i)
 			{ $options{ lc $1 } = $details }
 		else
@@ -213,9 +215,7 @@ Object-Tap.
 Role-Commons includes the following (deprecated) modules for the sake
 of backwards compatibility. I expect to phase them out around 2014.
 L<authority::shared>,
-L<Object::AUTHORITY>, 
-L<Object::DOES>,
-L<Object::Role>,
+L<Object::AUTHORITY>,
 L<Object::Tap>.
 
 =head1 BUGS
