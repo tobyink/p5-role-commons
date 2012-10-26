@@ -13,7 +13,7 @@ plan skip_all => 'Need Devel::Sub::Which'
 plan skip_all => 'Need namespace::autoclean'
 	unless eval 'require namespace::autoclean; 1';
 
-require Example89; 
+require Example89;
 plan tests => 2;
 is(
 	Example89->which('AUTHORITY'),

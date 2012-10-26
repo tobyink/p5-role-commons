@@ -1,5 +1,8 @@
 package Object::Tap;
 
+our $AUTHORITY = 'cpan:TOBYINK';
+our $VERSION   = '0.100';
+
 use Role::Commons ();
 use Role::Commons::Tap ();
 

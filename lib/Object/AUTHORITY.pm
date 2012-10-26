@@ -1,5 +1,8 @@
 package Object::AUTHORITY;
 
+our $AUTHORITY = 'cpan:TOBYINK';
+our $VERSION   = '0.100';
+
 use Role::Commons ();
 
 sub import
