@@ -182,6 +182,16 @@ It also handles passing some simple parameters through to the role
 from the consuming class. (Because Moo doesn't have anything like
 L<MooseX::Role::Parameterized>.)
 
+=begin trustme
+
+Not sure if these should be documented or not...
+
+=item parse_arguments
+
+=item apply_roles_to_object
+
+=end trustme
+
 =head2 Roles
 
 =over

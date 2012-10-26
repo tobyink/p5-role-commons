@@ -138,6 +138,8 @@ operator. (Briefly, you can pass a string for eq comparison, a regular
 expression, a code reference to use as a callback, or an array reference
 that will be grepped.)
 
+=back
+
 =head2 Multiple Authorities
 
 This module allows you to indicate that your module is issued by multiple
