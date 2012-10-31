@@ -10,7 +10,7 @@ use Scalar::Does qw[ does ARRAY HASH ];
 
 BEGIN {
 	$Role::Commons::AUTHORITY = 'cpan:TOBYINK';
-	$Role::Commons::VERSION   = '0.100';
+	$Role::Commons::VERSION   = '0.101';
 }
 
 my @ALL = qw(

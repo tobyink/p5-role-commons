@@ -7,7 +7,7 @@ use Object::ID qw( object_id );
 
 BEGIN {
 	$Role::Commons::ObjectID::AUTHORITY = 'cpan:TOBYINK';
-	$Role::Commons::ObjectID::VERSION   = '0.100';
+	$Role::Commons::ObjectID::VERSION   = '0.101';
 }
 
 our $setup_for_class = sub {

@@ -1,9 +1,10 @@
 package Object::AUTHORITY;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.100';
+our $VERSION   = '0.101';
 
 use Role::Commons ();
+use Role::Commons::Authority ();
 
 sub import
 {
@@ -15,6 +16,8 @@ sub import
 	
 	Role::Commons::->import('Authority', -into => $_) for @packages;
 }
+
+*AUTHORITY = Role::Commons::Authority::->can('AUTHORITY');
 
 1;
 

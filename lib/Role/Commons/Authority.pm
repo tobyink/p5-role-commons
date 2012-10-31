@@ -8,7 +8,7 @@ use Scalar::Does qw[ does blessed CODE ARRAY HASH REGEXP STRING ];
 
 BEGIN {
 	$Role::Commons::Authority::AUTHORITY = 'cpan:TOBYINK';
-	$Role::Commons::Authority::VERSION   = '0.100';
+	$Role::Commons::Authority::VERSION   = '0.101';
 }
 
 our %ENABLE_SHARED;

@@ -4,3 +4,8 @@
 	issued  2012-10-26;
 	label   "Initial release".
 
+`Role-Commons 0.101 cpan:TOBYINK`
+	issued  2012-10-26;
+	changeset [
+		item "Provide &Object::AUTHORITY::AUTHORITY function. It seems Web::Magic was relying on it."^^Addition;
+	].
