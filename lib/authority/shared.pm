@@ -1,3 +1,7 @@
+use 5.006;
+use strict;
+use warnings;
+
 package authority::shared;
 
 our $AUTHORITY = 'cpan:TOBYINK';

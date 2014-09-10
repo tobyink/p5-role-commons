@@ -1,3 +1,7 @@
+use 5.006;
+use strict;
+use warnings;
+
 package Object::Tap;
 
 our $AUTHORITY = 'cpan:TOBYINK';

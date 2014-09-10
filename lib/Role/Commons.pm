@@ -4,9 +4,9 @@ use 5.008;
 use strict;
 use warnings;
 use Carp qw[ carp croak ];
-use Class::Load qw[ load_class ];
+use Module::Runtime qw[ use_package_optimistically ];
 use Moo::Role qw[];
-use Scalar::Does qw[ does ARRAY HASH ];
+use Types::TypeTiny qw[ HashLike ArrayLike ];
 
 BEGIN {
 	$Role::Commons::AUTHORITY = 'cpan:TOBYINK';
@@ -56,7 +56,7 @@ sub import
 	
 	foreach my $role (sort keys %$roles)
 	{
-		load_class( join q[::], $class, $role );
+		use_package_optimistically( join q[::], $class, $role );
 	}
 	
 	'Moo::Role'->apply_roles_to_package(
@@ -74,9 +74,9 @@ sub import
 		} or next;
 		$role_pkg->$setup_method(
 			$options->{into},
-			does($details, HASH)
+			HashLike->check($details)
 				? %$details
-				: ( does($details, ARRAY) ? @$details : (option => $details) ),
+				: ( ArrayLike->check($details) ? @$details : (option => $details) ),
 		);
 	}
 }
@@ -89,7 +89,7 @@ sub apply_roles_to_object
 	
 	foreach my $role (sort keys %$roles)
 	{
-		load_class( join q[::], $class, $role );
+		use_package_optimistically( join q[::], $class, $role );
 	}
 	
 	'Moo::Role'->apply_roles_to_object(
@@ -107,9 +107,9 @@ sub apply_roles_to_object
 		} || sub { 0 };
 		$role_pkg->$setup_method(
 			ref($object),
-			does($details, HASH)
+			HashLike->check($details)
 				? %$details
-				: ( does($details, ARRAY) ? @$details : (option => $details) ),
+				: ( ArrayLike->check($details) ? @$details : (option => $details) ),
 		);
 		$setup_method = do {
 			no strict 'refs';
@@ -117,9 +117,9 @@ sub apply_roles_to_object
 		} or next;
 		$role_pkg->$setup_method(
 			$object,
-			does($details, HASH)
+			HashLike->check($details)
 				? %$details
-				: ( does($details, ARRAY) ? @$details : (option => $details) ),
+				: ( ArrayLike->check($details) ? @$details : (option => $details) ),
 		);
 	}
 }
