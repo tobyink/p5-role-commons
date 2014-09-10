@@ -9,3 +9,10 @@
 	changeset [
 		item "Provide &Object::AUTHORITY::AUTHORITY function. It seems Web::Magic was relying on it."^^Addition;
 	].
+
+`Role-Commons 0.102 cpan:TOBYINK`
+	issued    2014-09-10;
+	changeset [
+		item "Switch to Dist::Inkt."^^Packaging;
+	].
+

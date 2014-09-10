@@ -5,7 +5,7 @@ use warnings;
 package Object::AUTHORITY;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.101';
+our $VERSION   = '0.102';
 
 use Role::Commons ();
 use Role::Commons::Authority ();

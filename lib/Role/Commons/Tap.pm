@@ -8,7 +8,7 @@ use Scalar::Does qw[ does blessed CODE ARRAY HASH REGEXP STRING SCALAR ];
 
 BEGIN {
 	$Role::Commons::Tap::AUTHORITY = 'cpan:TOBYINK';
-	$Role::Commons::Tap::VERSION   = '0.101';
+	$Role::Commons::Tap::VERSION   = '0.102';
 }
 
 our $setup_for_class = sub {
