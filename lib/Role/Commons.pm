@@ -11,7 +11,7 @@ use Types::TypeTiny qw[ HashLike ArrayLike ];
 
 BEGIN {
 	$Role::Commons::AUTHORITY = 'cpan:TOBYINK';
-	$Role::Commons::VERSION   = '0.102';
+	$Role::Commons::VERSION   = '0.103';
 }
 
 my @ALL = qw(

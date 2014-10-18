@@ -16,3 +16,14 @@
 		item "Switch to Dist::Inkt."^^Packaging;
 	].
 
+`Role-Commons 0.103 cpan:TOBYINK`
+	issued    2014-10-18;
+	changeset [
+		item "Stop using Scalar::Does."^^Change;
+		item "use match::simple."^^Change;
+		item "Recommend Object::Tap/Object::Util over Role::Commons::Tap."^^Change;
+		item "The obsolete authority::shared module is now gone."^^Removal;
+		item "The obsolete Object::Tap module is now gone (though the namespace has been recycled by MSTROUT)."^^Removal;
+		item "Fix dependency information."^^Packaging;
+	].
+
