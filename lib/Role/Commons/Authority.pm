@@ -2,9 +2,12 @@ package Role::Commons::Authority;
 
 use strict;
 use warnings;
-use Moo::Role;
+
 use Carp qw[croak];
-use Scalar::Does qw[ does blessed CODE ARRAY HASH REGEXP STRING ];
+use match::simple qw[match];
+use Scalar::Util qw[blessed];
+
+use Moo::Role;
 
 BEGIN {
 	$Role::Commons::Authority::AUTHORITY = 'cpan:TOBYINK';
@@ -21,35 +24,9 @@ our $setup_for_class = sub {
 	{
 		$ENABLE_SHARED{ $package } = 1;
 		
-		does($args{-authorities}, ARRAY) and
+		ref($args{-authorities}) eq 'ARRAY' and
 			$SHARED_AUTHORITIES{ $package } = $args{-authorities};
 	}
-};
-
-our $_smart_match;
-$_smart_match = sub
-{
-	my ($A, $B) = @_;
-	
-	if (not defined $B)
-		{ return not defined $A }
-	
-	if (does $B, CODE)
-		{ return $B->($A) }
-	
-	if (does $B, ARRAY)
-		{ return scalar grep { $_smart_match->($A, $_) } @$B }
-	
-	if (does $B, HASH)
-		{ return defined $A && exists $B->{$A} }
-	
-	if (does $B, REGEXP)
-		{ return $A =~ $B }
-	
-	if (does $B, STRING)
-		{ return $A eq $B }
-	
-	return;
 };
 
 sub AUTHORITY
@@ -73,7 +50,7 @@ sub AUTHORITY
 		my $ok = undef;
 		AUTH: for my $A (@authorities)
 		{
-			if ($_smart_match->($A, $test))
+			if (match($A, $test))
 			{
 				$ok = $A;
 				last AUTH;

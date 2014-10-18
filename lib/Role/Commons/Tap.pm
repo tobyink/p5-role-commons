@@ -2,9 +2,10 @@ package Role::Commons::Tap;
 
 use strict;
 use warnings;
-use Moo::Role;
+
 use Carp qw[croak];
-use Scalar::Does qw[ does blessed CODE ARRAY HASH REGEXP STRING SCALAR ];
+
+use Moo::Role;
 
 BEGIN {
 	$Role::Commons::Tap::AUTHORITY = 'cpan:TOBYINK';
@@ -25,9 +26,9 @@ sub tap
 	{
 		my $next = shift;
 		
-		if (does($next, CODE) or not ref $next)
+		if (ref($next) eq 'CODE' or not ref $next)
 		{
-			my $args = does($_[0], 'ARRAY') ? shift : [];
+			my $args = ref($_[0]) eq 'ARRAY' ? shift : [];
 			my $code = ref $next ? $next : sub { $self->$next(@_) };
 			
 			if ($flags{ EVAL })
@@ -43,7 +44,7 @@ sub tap
 			next PARAM;
 		}
 		
-		if (does($next, SCALAR))
+		if (ref($next) eq 'SCALAR')
 		{
 			if ($$next =~ m{^(no_?)?(.+)$}i)
 			{
