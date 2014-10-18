@@ -222,11 +222,8 @@ Object-DOES,
 Object-Role, and
 Object-Tap.
 
-Role-Commons includes the following (deprecated) modules for the sake
-of backwards compatibility. I expect to phase them out around 2014.
-L<authority::shared>,
-L<Object::AUTHORITY>,
-L<Object::Tap>.
+Role-Commons bundles L<Object::AUTHORITY> for the sake of backwards
+compatibility. This is being phased out.
 
 =head1 BUGS
 
