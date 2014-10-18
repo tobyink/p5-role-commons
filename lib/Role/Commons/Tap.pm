@@ -93,6 +93,10 @@ Role::Commons::Tap - an object method which helps with chaining, inspired by Rub
 
 =head1 DESCRIPTION
 
+B<< DO NOT USE THIS MODULE! >> Use L<Object::Tap> or L<Object::Util>
+instead. They are not drop-in replacements, but a far more sensible way
+to have a C<tap> method.
+
 This module has nothing to do with the Test Anything Protocol (TAP, see
 L<Test::Harness>).
 
@@ -207,6 +211,8 @@ Please report any bugs to
 L<http://rt.cpan.org/Dist/Display.html?Queue=Role-Commons>.
 
 =head1 SEE ALSO
+
+L<Object::Tap>, L<Object::Util>.
 
 L<Role::Commons>.
 
