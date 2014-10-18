@@ -1,6 +1,7 @@
 @prefix deps:  <http://ontologi.es/doap-deps#> .
 
 <http://purl.org/NET/cpan-uri/dist/Role-Commons/project>
+	deps:runtime-requirement         [ deps:on "perl 5.008"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Types::Standard 1.000000"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Moo::Role"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Object::ID"^^deps:CpanId ];
