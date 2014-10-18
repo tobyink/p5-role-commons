@@ -2,7 +2,10 @@ package Role::Commons::ObjectID;
 
 use strict;
 use warnings;
+
 use Moo::Role;
+
+# deliberately load this *after* Moo::Role
 use Object::ID qw( object_id );
 
 BEGIN {
