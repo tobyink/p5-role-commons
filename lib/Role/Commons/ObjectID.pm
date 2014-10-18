@@ -1,17 +1,17 @@
-package Role::Commons::ObjectID;
-
+use 5.008;
 use strict;
 use warnings;
 
-use Moo::Role;
-
-# deliberately load this *after* Moo::Role
-use Object::ID qw( object_id );
+package Role::Commons::ObjectID;
 
 BEGIN {
+	use Moo::Role;
 	$Role::Commons::ObjectID::AUTHORITY = 'cpan:TOBYINK';
 	$Role::Commons::ObjectID::VERSION   = '0.102';
 }
+
+# deliberately load this *after* Moo::Role
+use Object::ID qw( object_id );
 
 our $setup_for_class = sub {
 	my ($role, $package, %args) = @_;

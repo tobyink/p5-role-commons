@@ -1,8 +1,9 @@
-package Role::Commons;
-
 use 5.008;
 use strict;
 use warnings;
+
+package Role::Commons;
+
 use Carp qw[ carp croak ];
 use Module::Runtime qw[ use_package_optimistically ];
 use Moo::Role qw[];

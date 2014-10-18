@@ -1,15 +1,15 @@
-package Role::Commons::Authority;
-
+use 5.008;
 use strict;
 use warnings;
+
+package Role::Commons::Authority;
 
 use Carp qw[croak];
 use match::simple qw[match];
 use Scalar::Util qw[blessed];
 
-use Moo::Role;
-
 BEGIN {
+	use Moo::Role;
 	$Role::Commons::Authority::AUTHORITY = 'cpan:TOBYINK';
 	$Role::Commons::Authority::VERSION   = '0.102';
 }

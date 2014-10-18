@@ -1,13 +1,13 @@
-package Role::Commons::Tap;
-
+use 5.008;
 use strict;
 use warnings;
 
+package Role::Commons::Tap;
+
 use Carp qw[croak];
 
-use Moo::Role;
-
 BEGIN {
+	use Moo::Role;
 	$Role::Commons::Tap::AUTHORITY = 'cpan:TOBYINK';
 	$Role::Commons::Tap::VERSION   = '0.102';
 }

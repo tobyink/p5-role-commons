@@ -1,7 +1,7 @@
 @prefix deps:  <http://ontologi.es/doap-deps#> .
 
 <http://purl.org/NET/cpan-uri/dist/Role-Commons/project>
-	deps:runtime-requirement         [ deps:on "Scalar::Does 0.006"^^deps:CpanId ];
+	deps:runtime-requirement         [ deps:on "Types::Standard 1.000000"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Moo::Role"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Object::ID"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Module::Runtime"^^deps:CpanId ];
