@@ -4,7 +4,7 @@
 	deps:runtime-requirement         [ deps:on "Scalar::Does 0.006"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Moo::Role"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Object::ID"^^deps:CpanId ];
-	deps:runtime-requirement         [ deps:on "Class::Load"^^deps:CpanId ];
+	deps:runtime-requirement         [ deps:on "Module::Runtime"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "match::simple"^^deps:CpanId ];
 	deps:test-requirement            [ deps:on "Test::More 0.61"^^deps:CpanId ].
 
