@@ -11,7 +11,7 @@ use Scalar::Util qw[blessed];
 BEGIN {
 	use Moo::Role;
 	$Role::Commons::Authority::AUTHORITY = 'cpan:TOBYINK';
-	$Role::Commons::Authority::VERSION   = '0.103';
+	$Role::Commons::Authority::VERSION   = '0.104';
 }
 
 our %ENABLE_SHARED;

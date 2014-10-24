@@ -9,7 +9,7 @@ use Carp qw[croak];
 BEGIN {
 	use Moo::Role;
 	$Role::Commons::Tap::AUTHORITY = 'cpan:TOBYINK';
-	$Role::Commons::Tap::VERSION   = '0.103';
+	$Role::Commons::Tap::VERSION   = '0.104';
 }
 
 our $setup_for_class = sub {

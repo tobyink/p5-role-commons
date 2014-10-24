@@ -7,7 +7,7 @@ package Role::Commons::ObjectID;
 BEGIN {
 	use Moo::Role;
 	$Role::Commons::ObjectID::AUTHORITY = 'cpan:TOBYINK';
-	$Role::Commons::ObjectID::VERSION   = '0.103';
+	$Role::Commons::ObjectID::VERSION   = '0.104';
 }
 
 # deliberately load this *after* Moo::Role
