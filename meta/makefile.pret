@@ -7,5 +7,6 @@
 	deps:runtime-requirement         [ deps:on "Object::ID"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "Module::Runtime"^^deps:CpanId ];
 	deps:runtime-requirement         [ deps:on "match::simple"^^deps:CpanId ];
-	deps:test-requirement            [ deps:on "Test::More 0.61"^^deps:CpanId ].
+	deps:test-requirement            [ deps:on "Test::More 0.61"^^deps:CpanId ];
+	deps:test-requirement            [ deps:on "Test::Exception"^^deps:CpanId ].
 
